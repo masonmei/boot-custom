@@ -1,6 +1,6 @@
 package com.igitras.boot.iplist;
 
-import com.igitras.boot.utils.FileWatcher;
+import com.igitras.boot.common.FileWatcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;

@@ -1,7 +1,8 @@
 package com.igitras.boot.iplist;
 
 import com.igitras.boot.common.RequestInfoHolder;
-import com.igitras.boot.utils.FileWatcher;
+import com.igitras.boot.common.FileWatcher;
+import com.igitras.boot.utils.IpV4Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
@@ -41,8 +42,12 @@ public class IpFilter implements Filter {
         List<String> blackSet = fileWatcher.getIpListHolder().getDeny();
         List<String> whiteSet = fileWatcher.getIpListHolder().getAllow();
 
-        if (blackSet != null && blackSet.contains(ip)) {
-            return;
+        if (blackSet != null) {
+            for (String blackRange : blackSet) {
+                if (IpV4Utils.isInRange(blackRange, ip)) {
+                    return;
+                }
+            }
         }
 
         if (whiteSet != null && whiteSet.contains(ip)) {

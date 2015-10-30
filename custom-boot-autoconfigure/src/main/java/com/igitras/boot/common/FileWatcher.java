@@ -1,4 +1,4 @@
-package com.igitras.boot.utils;
+package com.igitras.boot.common;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
