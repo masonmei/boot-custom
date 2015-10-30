@@ -1,12 +1,12 @@
 package com.igitras.boot.iplist;
 
-import com.igitras.boot.utils.Constains;
+import com.igitras.boot.utils.Constrains;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * Created by mason on 10/29/15.
  */
-@ConfigurationProperties(prefix = Constains.IP_PERMISSION_PREFIX)
+@ConfigurationProperties(prefix = Constrains.IP_PERMISSION_PREFIX)
 public class IpListProperties {
     private String configPath;
     private String configFile;

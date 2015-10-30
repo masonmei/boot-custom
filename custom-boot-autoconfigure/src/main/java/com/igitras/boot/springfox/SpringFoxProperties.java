@@ -1,6 +1,6 @@
 package com.igitras.boot.springfox;
 
-import com.igitras.boot.utils.Constains;
+import com.igitras.boot.utils.Constrains;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  * <p>
  * Created by mason on 10/29/15.
  */
-@ConfigurationProperties(prefix = Constains.SPRING_FOX_PREFIX)
+@ConfigurationProperties(prefix = Constrains.SPRING_FOX_PREFIX)
 public class SpringFoxProperties {
 
     private List<String> patterns;

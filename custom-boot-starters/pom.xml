@@ -15,6 +15,7 @@
     <modules>
         <module>custom-boot-starter-springfox</module>
         <module>custom-boot-starter-iplist</module>
+        <module>custom-boot-starter-trace</module>
     </modules>
 
 

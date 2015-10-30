@@ -1,4 +1,4 @@
-package com.igitras.boot.utils;
+package com.igitras.boot.common;
 
 import org.junit.Test;
 

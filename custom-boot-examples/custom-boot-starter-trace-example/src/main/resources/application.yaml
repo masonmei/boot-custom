@@ -1,0 +1,5 @@
+custom:
+  boot:
+    trace:
+      trace-header-name: X-IGITRAS-TRACE-ID
+      traceStartTimeHeaderName: X-IGITRAS-TRACE-TIMESTAMP
