@@ -1,5 +1,7 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.igitras.boot.springfox.SpringFoxAutoConfiguration,\
-com.igitras.boot.iplist.IpListAutoConfiguration,\
-com.igitras.boot.trace.TraceAutoConfiguration
+  com.igitras.boot.springfox.SpringFoxAutoConfiguration,\
+  com.igitras.boot.iplist.IpListAutoConfiguration,\
+  com.igitras.boot.trace.TraceAutoConfiguration,\
+  com.igitras.boot.async.AsyncAutoConfiguration,\
+  com.igitras.boot.profile.ProfilingAutoConfiguration

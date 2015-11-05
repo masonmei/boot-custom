@@ -40,24 +40,28 @@ public class TraceInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
-        String requestId = request.getHeader(traceHeaderName);
-        if (requestId == null) {
-            requestId = UUID.randomUUID().toString();
-            log.info("{} not found in header, generate traceId: {} ", traceHeaderName, requestId);
+        if (null == RequestInfoHolder.getThreadTraceId()) {
+            String requestId = request.getHeader(traceHeaderName);
+            if (requestId == null) {
+                requestId = UUID.randomUUID().toString();
+                RequestInfoHolder.setThreadTraceId(requestId);
+                log.info("{} not found in header, generate traceId: {} ", traceHeaderName, requestId);
+            }
+            response.addHeader(traceHeaderName, requestId);
+            MDC.put("requestId", requestId);
         }
 
-        String currentTimeInMillis = request.getHeader(traceTimestampHeaderName);
-        if (currentTimeInMillis == null) {
-            currentTimeInMillis = String.format("%d", Calendar.getInstance().getTimeInMillis());
-            log.info("{} not found in header, generate traceStartTimestamp: {}",
-                    traceTimestampHeaderName, currentTimeInMillis);
+        if (null == RequestInfoHolder.getThreadTraceTimestamp()) {
+            String currentTimeInMillis = request.getHeader(traceTimestampHeaderName);
+            if (currentTimeInMillis == null) {
+                currentTimeInMillis = String.format("%d", Calendar.getInstance().getTimeInMillis());
+                RequestInfoHolder.setThreadTraceTimestamp(currentTimeInMillis);
+                log.info("{} not found in header, generate traceStartTimestamp: {}",
+                        traceTimestampHeaderName, currentTimeInMillis);
+            }
+            response.addHeader(traceTimestampHeaderName, currentTimeInMillis);
         }
 
-        RequestInfoHolder.setThreadTraceId(requestId);
-        RequestInfoHolder.setThreadTraceTimestamp(currentTimeInMillis);
-        response.addHeader(traceHeaderName, requestId);
-        response.addHeader(traceTimestampHeaderName, currentTimeInMillis);
-        MDC.put("requestId", requestId);
 
         log.info("request preHandle, method: {}, url: {}", request.getMethod(), request.getRequestURI());
         return true;

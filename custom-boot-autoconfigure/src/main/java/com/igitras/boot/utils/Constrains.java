@@ -15,4 +15,7 @@ public class Constrains {
     public static final String TRACE_HEADER_NAME = "x-trace-header-name";
     public static final String TRACE_TIMESTAMP_HEADER_NAME = "x-trace-timestamp-header-name";
 
+    public static final String ASYNC_PREFIX = CUSTOMER_BOOT_BASE + "async";
+
+    public static final String PROFILE_PREFIX = CUSTOMER_BOOT_BASE + "profile";
 }

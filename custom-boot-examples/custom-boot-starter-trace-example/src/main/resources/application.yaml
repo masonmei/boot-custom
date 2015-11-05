@@ -1,3 +1,5 @@
+server:
+  port: 28888
 custom:
   boot:
     trace:
