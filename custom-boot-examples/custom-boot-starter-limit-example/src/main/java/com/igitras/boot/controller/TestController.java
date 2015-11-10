@@ -38,11 +38,12 @@ public class TestController {
 
     @Profiling
     public String printCurrentTimestamp() {
-        try {
-            Thread.sleep(1000L);
-        } catch (InterruptedException e) {
-        }
         return String.format("current time is : %d", System.currentTimeMillis());
+    }
+
+    @RequestMapping(value = "sync/future", method = RequestMethod.GET)
+    public String syncFuture() {
+       return printCurrentTimestamp();
     }
 
 }

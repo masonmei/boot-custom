@@ -9,15 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>custom-boot-starter-profiling-example</artifactId>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <artifactId>custom-boot-starter-limit-example</artifactId>
+
 
     <dependencies>
         <dependency>
@@ -27,14 +20,17 @@
         </dependency>
         <dependency>
             <groupId>com.igitras.boot</groupId>
-            <artifactId>custom-boot-starter-profiling</artifactId>
+            <artifactId>custom-boot-starter-limit</artifactId>
             <version>0.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

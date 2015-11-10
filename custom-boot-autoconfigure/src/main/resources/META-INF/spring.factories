@@ -4,4 +4,5 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   com.igitras.boot.iplist.IpListAutoConfiguration,\
   com.igitras.boot.trace.TraceAutoConfiguration,\
   com.igitras.boot.async.AsyncAutoConfiguration,\
-  com.igitras.boot.profiling.ProfilingAutoConfiguration
+  com.igitras.boot.profiling.ProfilingAutoConfiguration,\
+  com.igitras.boot.limit.LimiterAutoConfiguration

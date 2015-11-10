@@ -1,7 +1,5 @@
-server:
-  port: 28888
-management:
-  context-path: /admin
+How TO Configure
+====
 custom:
   boot:
     profiling:
@@ -11,3 +9,7 @@ custom:
 spring:
   aop:
     proxy-target-class: true
+
+
+Profiling is not enabled by default.
+
