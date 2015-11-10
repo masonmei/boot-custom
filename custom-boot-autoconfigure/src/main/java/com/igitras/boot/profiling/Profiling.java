@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2015 Baidu, Inc. All Rights Reserved.
  */
-package com.igitras.boot.profile;
+package com.igitras.boot.profiling;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

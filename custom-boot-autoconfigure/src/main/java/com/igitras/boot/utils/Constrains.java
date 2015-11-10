@@ -17,5 +17,5 @@ public class Constrains {
 
     public static final String ASYNC_PREFIX = CUSTOMER_BOOT_BASE + "async";
 
-    public static final String PROFILE_PREFIX = CUSTOMER_BOOT_BASE + "profile";
+    public static final String PROFILE_PREFIX = CUSTOMER_BOOT_BASE + "profiling";
 }

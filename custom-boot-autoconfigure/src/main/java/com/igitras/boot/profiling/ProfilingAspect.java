@@ -1,55 +1,74 @@
-/*
- * Copyright (C) 2015 Baidu, Inc. All Rights Reserved.
- */
-package com.igitras.boot.profile;
+package com.igitras.boot.profiling;
 
-import org.aopalliance.intercept.MethodInterceptor;
-import org.aopalliance.intercept.MethodInvocation;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StopWatch;
 
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Created by meidongxu on 7/5/15.
+ * Aspect for profiling purpose.
+ * <p>
+ * Created by mason on 11/6/15.
  */
-public class ProfilingInterceptor implements MethodInterceptor {
-    private static final Logger log = LoggerFactory.getLogger(ProfilingInterceptor.class);
+@Aspect
+public class ProfilingAspect {
 
-    private static final ConcurrentHashMap<String, MethodStat> METHOD_STATS_MAP = new ConcurrentHashMap<>();
+    public static final int DEFAULT_WARNING_THRESHOLD_IN_MILLIS = 5000;
+    public static final int DEFAULT_LOG_STATISTICS_FREQUENCY = 100;
+
+    private static final Logger log = LoggerFactory.getLogger(ProfilingAspect.class);
+    private static final ConcurrentHashMap<String, MethodStat> METHOD_STATS_MAP = new ConcurrentHashMap<>(500);
 
     private final long methodWarningThreshold;
     private final long logFrequency;
 
-    public ProfilingInterceptor(long methodWarningThreshold, long logFrequency) {
+    public ProfilingAspect(long methodWarningThreshold, long logFrequency) {
         if (methodWarningThreshold <= 0) {
-            methodWarningThreshold = 5000;
+            methodWarningThreshold = DEFAULT_WARNING_THRESHOLD_IN_MILLIS;
         }
 
         if (logFrequency <= 0) {
-            logFrequency = 100;
+            logFrequency = DEFAULT_LOG_STATISTICS_FREQUENCY;
         }
 
         this.methodWarningThreshold = methodWarningThreshold;
         this.logFrequency = logFrequency;
     }
 
-    @Override
-    public Object invoke(MethodInvocation method) throws Throwable {
-        long startTime = System.currentTimeMillis();
-        String methodName = method.getMethod().getName();
+
+    @Pointcut("execution(public * *(..))")
+    public void publicMethod() {
+    }
+
+    @Pointcut("within(@org.springframework.web.bind.annotation.RestController *)")
+    public void controller() {
+    }
+
+    @Pointcut("@annotation(com.igitras.boot.profiling.Profiling)")
+    public void annotatedProfiling() {
+    }
+
+    @Around("(publicMethod() && annotatedProfiling()) || controller()")
+    public Object profiling(ProceedingJoinPoint joinPoint) throws Throwable {
+        StopWatch stopWatch = new StopWatch();
+        String methodName = joinPoint.getSignature().toString();
         try {
-            log.debug("start to process method: {} at: {}", methodName, startTime);
-            return method.proceed();
+            stopWatch.start();
+            return joinPoint.proceed();
         } finally {
-            long endTime = System.currentTimeMillis();
-            long elapsed = endTime - startTime;
-            log.info("finished to process method: {} at {}, using: {}ms", methodName, endTime, elapsed);
-            if (elapsed > methodWarningThreshold) {
-                log.warn("found slow method execution: methodName : {}, elapsed: {}ms", methodName, elapsed);
+            stopWatch.stop();
+            log.info("process method: {}, using: {}ms", methodName, stopWatch.getTotalTimeMillis());
+            if (stopWatch.getTotalTimeMillis() > methodWarningThreshold) {
+                log.warn("found slow method execution: methodName : {}, elapsed: {}ms", methodName,
+                        stopWatch.getTotalTimeMillis());
             }
 
-            updateStat(methodName, elapsed);
+            updateStat(methodName, stopWatch.getTotalTimeMillis());
         }
     }
 
