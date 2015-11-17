@@ -8,18 +8,13 @@
         <version>0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>custom-boot-examples</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>custom-boot-starter-springfox-example</module>
-        <module>custom-boot-starter-iplist-example</module>
-        <module>custom-boot-starter-trace-example</module>
-        <module>custom-boot-starter-async-example</module>
-        <module>custom-boot-starter-profiling-example</module>
-        <module>custom-boot-starter-limit-example</module>
-        <module>custom-boot-starter-i18n-example</module>
+        <module>spring-boot-jmx-example</module>
+        <module>spring-boot-undertow-example</module>
     </modules>
+
+    <artifactId>spring-boot-examples</artifactId>
 
 
 </project>

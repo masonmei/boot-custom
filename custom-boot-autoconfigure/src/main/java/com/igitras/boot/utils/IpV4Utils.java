@@ -6,9 +6,11 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
+ * Ip Utils
+ * <p>
  * Created by mason on 10/29/15.
  */
-public class IpV4Utils {
+public abstract class IpV4Utils {
     public static final String PATTERN_255 = "(?:25[0-5]|2[0-4][0-9]|[1]?[0-9][0-9]?)";
     public static final Pattern PATTERN_IPV4 = Pattern.compile("^(?:" + PATTERN_255 + "\\.){3}" + PATTERN_255 + "$");
 

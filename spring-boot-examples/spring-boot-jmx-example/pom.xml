@@ -3,18 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>custom-boot-examples</artifactId>
+        <artifactId>spring-boot-examples</artifactId>
         <groupId>com.igitras.boot</groupId>
         <version>0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>custom-boot-starter-springfox-example</artifactId>
-
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
+    <artifactId>spring-boot-jmx-example</artifactId>
     <build>
         <plugins>
             <plugin>
@@ -25,19 +20,10 @@
     </build>
     <dependencies>
         <dependency>
-            <groupId>com.igitras.boot</groupId>
-            <artifactId>custom-boot-autoconfigure</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.igitras.boot</groupId>
-            <artifactId>custom-boot-starter-springfox</artifactId>
-            <version>0.0.1</version>
-        </dependency>
     </dependencies>
+
 
 </project>

@@ -19,6 +19,7 @@
         <module>custom-boot-starter-async</module>
         <module>custom-boot-starter-profiling</module>
         <module>custom-boot-starter-limit</module>
+        <module>custom-boot-starter-i18n</module>
     </modules>
 
 

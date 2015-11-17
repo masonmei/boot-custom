@@ -3,7 +3,7 @@ package com.igitras.boot.utils;
 /**
  * Created by mason on 10/29/15.
  */
-public class Constrains {
+public abstract class Constrains {
     public static final String CUSTOMER_BOOT_BASE = "custom.boot.";
     public static final String ENABLED = "enabled";
 
@@ -20,4 +20,9 @@ public class Constrains {
     public static final String PROFILE_PREFIX = CUSTOMER_BOOT_BASE + "profiling";
 
     public static final String LIMIT_PREFIX = CUSTOMER_BOOT_BASE + "limit";
+
+    public static final String I18N_PREFIX = CUSTOMER_BOOT_BASE + "i18n";
+
+    public static final String ARGS_PREFIX = CUSTOMER_BOOT_BASE + "args";
+
 }

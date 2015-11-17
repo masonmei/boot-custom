@@ -12,6 +12,10 @@
     <artifactId>custom-boot-dependency</artifactId>
     <packaging>pom</packaging>
 
+    <properties>
+        <guava.version>18.0</guava.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -51,6 +55,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mobile</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
 
         <dependency>
