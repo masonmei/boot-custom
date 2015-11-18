@@ -1,4 +1,4 @@
-package com.igitras.boot.validation.resolver;
+package com.igitras.boot.resolver;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 

@@ -19,6 +19,7 @@
         <module>custom-boot-starter-profiling-example</module>
         <module>custom-boot-starter-limit-example</module>
         <module>custom-boot-starter-i18n-example</module>
+        <module>custom-boot-starter-resolver-example</module>
     </modules>
 
 

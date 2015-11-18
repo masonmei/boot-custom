@@ -6,4 +6,5 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   com.igitras.boot.async.AsyncAutoConfiguration,\
   com.igitras.boot.profiling.ProfilingAutoConfiguration,\
   com.igitras.boot.limit.LimiterAutoConfiguration,\
-  com.igitras.boot.i18n.I18NAutoConfiguration
+  com.igitras.boot.i18n.I18NAutoConfiguration,\
+  com.igitras.boot.resolver.MethodArgumentResolverAutoConfiguration

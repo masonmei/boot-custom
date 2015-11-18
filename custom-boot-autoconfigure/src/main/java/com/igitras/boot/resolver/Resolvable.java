@@ -1,4 +1,4 @@
-package com.igitras.boot.validation.resolver;
+package com.igitras.boot.resolver;
 
 /**
  * Created by mason on 11/16/15.
