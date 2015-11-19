@@ -1,7 +1,6 @@
 package com.igitras.boot.iplist;
 
 import com.igitras.boot.common.FileWatcher;
-import com.igitras.boot.utils.Constrains;
 import com.igitras.boot.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -11,11 +10,9 @@ import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.util.StringUtils;
 
 import javax.servlet.Filter;
 import javax.servlet.Servlet;
-import java.io.File;
 
 import static com.igitras.boot.utils.Constrains.ENABLED;
 import static com.igitras.boot.utils.Constrains.IP_PERMISSION_PREFIX;

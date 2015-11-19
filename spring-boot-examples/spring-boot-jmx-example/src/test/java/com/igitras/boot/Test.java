@@ -1,7 +1,5 @@
 package com.igitras.boot;
 
-import org.springframework.boot.test.IntegrationTest;
-
 /**
  * Created by mason on 11/17/15.
  */

@@ -21,6 +21,7 @@
         <module>custom-boot-starter-limit</module>
         <module>custom-boot-starter-i18n</module>
         <module>custom-boot-starter-resolver</module>
+        <module>custom-boot-starter-dualssl</module>
     </modules>
 
 

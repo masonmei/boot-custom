@@ -1,7 +1,7 @@
 package com.igitras.boot.iplist;
 
-import com.igitras.boot.common.RequestInfoHolder;
 import com.igitras.boot.common.FileWatcher;
+import com.igitras.boot.common.RequestInfoHolder;
 import com.igitras.boot.utils.IpV4Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

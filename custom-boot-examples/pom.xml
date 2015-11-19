@@ -20,6 +20,7 @@
         <module>custom-boot-starter-limit-example</module>
         <module>custom-boot-starter-i18n-example</module>
         <module>custom-boot-starter-resolver-example</module>
+        <module>custom-boot-starter-dualssl-example</module>
     </modules>
 
 

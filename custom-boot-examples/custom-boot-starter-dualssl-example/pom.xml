@@ -9,9 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>custom-boot-starter-resolver-example</artifactId>
-
-
+    <artifactId>custom-boot-starter-dualssl-example</artifactId>
     <build>
         <plugins>
             <plugin>
@@ -20,6 +18,8 @@
             </plugin>
         </plugins>
     </build>
+
+
     <dependencies>
         <dependency>
             <groupId>com.igitras.boot</groupId>
@@ -28,14 +28,12 @@
         </dependency>
         <dependency>
             <groupId>com.igitras.boot</groupId>
-            <artifactId>custom-boot-starter-resolver</artifactId>
+            <artifactId>custom-boot-starter-dualssl</artifactId>
             <version>0.0.1</version>
         </dependency>
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>18.0</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
     </dependencies>
-
 </project>

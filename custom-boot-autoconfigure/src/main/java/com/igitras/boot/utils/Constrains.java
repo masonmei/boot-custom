@@ -25,4 +25,6 @@ public abstract class Constrains {
 
     public static final String ARGS_PREFIX = CUSTOMER_BOOT_BASE + "args";
 
+    public static final String SSL_DUAL_PREFIX = CUSTOMER_BOOT_BASE + "ssl.dual";
+
 }

@@ -1,6 +1,5 @@
 package com.igitras.boot;
 
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiParam;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -2,7 +2,6 @@ package com.igitras.boot.springfox;
 
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
-import com.igitras.boot.utils.Constrains;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
